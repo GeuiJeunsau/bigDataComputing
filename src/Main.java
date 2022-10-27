@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println("Prediction begin...");
 
-        solution.predict();
+        solution.train();
 
         System.out.println("Prediction end...");
 

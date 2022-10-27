@@ -10,6 +10,7 @@ public class CleanData {
 
     public void clean(List<List<String>> trainingData){
         List<String> header = trainingData.get(0);
+        //remove dirty data
         trainingData.removeIf(td -> !(checkValid(td, header)
                 && checkOutlier(td, header)
         )
