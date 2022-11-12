@@ -13,11 +13,6 @@ public class AcquireData {
     public static int VALIDATION_DATA = 2;
     private static List<String> PATH = Arrays.asList("resource/training.csv","", "");
 
-    public List<Map<String,Object>> getDataAsMap(String source){
-
-        return Arrays.asList();
-    }
-
     public List<List<String>> getDataAsList(Integer source) {
         List<List<String>> data = new ArrayList<>();
         try {
