@@ -10,11 +10,15 @@ public class CleanData {
 
     public void clean(List<List<String>> trainingData){
         List<String> header = trainingData.get(0);
+        int originalSize = trainingData.size();
         //remove dirty data
         trainingData.removeIf(td -> !(checkValid(td, header)
                 && checkOutlier(td, header)
         )
                 && !header(td, header));
+        System.out.println("total data size is:" + originalSize);
+        System.out.println("cleaned data size is: " + (originalSize-trainingData.size()));
+
     }
 
     //check if data of current line all valid

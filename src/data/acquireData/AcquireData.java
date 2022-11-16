@@ -1,9 +1,11 @@
-package acquireData;
+package data.acquireData;
 
-import jdk.internal.util.xml.impl.Input;
-
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class AcquireData {
@@ -11,7 +13,7 @@ public class AcquireData {
     public static int TRAINING_DATA = 0;
     public static int TEST_DATA = 1;
     public static int VALIDATION_DATA = 2;
-    private static List<String> PATH = Arrays.asList("resource/training.csv","", "");
+    private static List<String> PATH = Arrays.asList("resource/training.csv","resource/test.csv", "resource/validation.csv");
 
     public List<List<String>> getDataAsList(Integer source) {
         List<List<String>> data = new ArrayList<>();

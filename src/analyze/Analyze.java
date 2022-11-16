@@ -1,6 +1,6 @@
 package analyze;
 
-import org.omg.CORBA.StringHolder;
+
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,9 +12,12 @@ public class Analyze {
 
     Bayes bayes = new Bayes();
 
-    public List<List<BigDecimal>> analyze(List<List<String>> trainingData, String method){
+    public List<String> analyze(List<List<String>> trainingData, List<List<String>> testingData,List<List<String>> validData, String method){
         if (BAYES.equals(method)){
-            return bayes.getLikelihood(trainingData);
+            bayes.train(trainingData);
+            bayes.validBayes(validData);
+            List<String> predictList = bayes.predictLabel(testingData);
+            return predictList;
         } else {
             return new ArrayList<>();
         }
